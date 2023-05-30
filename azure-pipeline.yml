@@ -8,7 +8,9 @@ steps:
 - bash: az login
   displayName: "Connet into the Azure Portal"
 
-- bash: az group create --name miris --location brazilsouth
+- bash: az group create --name machine --location brazilsouth
+
+- bash: az vm create -n MyVm -g machine --image Ubuntu2204
   displayName: "Show Azure CLI version"
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
