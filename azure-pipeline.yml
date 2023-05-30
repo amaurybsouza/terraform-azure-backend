@@ -4,8 +4,11 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
+steps: 
+- bash: az login
+  displayName: "Connet into the Azure Portal"
+
 - bash: az group create --name maumau --location brazilsouth
-  displayName: 'Show Azure CLI version'
+  displayName: "Show Azure CLI version"
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
