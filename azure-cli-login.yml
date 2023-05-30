@@ -1,5 +1,0 @@
-- bash: |
-    az pipelines build list
-  displayName: 'Show build list'
-  env:
-    AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
