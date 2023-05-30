@@ -10,7 +10,7 @@ steps:
 
 - bash: az group create --name machine --location brazilsouth
 
-- bash: az vm create -n MyVm -g machine --image Ubuntu2204
+- bash: az vm create -n MyVm -g machine --image Ubuntu2204 --generate-ssh-keys
   displayName: "Show Azure CLI version"
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
