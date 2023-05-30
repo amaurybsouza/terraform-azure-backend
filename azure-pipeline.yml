@@ -5,15 +5,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps: 
-- task: AzureCLI@2
-  displayName: 'Azure Login'
-  inputs:
-    azureSubscription: '$(AzureSubscription)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az account show'
+- bash: az login
+  displayName: "Connet into the Azure Portal"
 
-- bash: az group create --name maquinetas --location brazilsouth
+- bash: az group create --name miris --location brazilsouth
   displayName: "Show Azure CLI version"
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
