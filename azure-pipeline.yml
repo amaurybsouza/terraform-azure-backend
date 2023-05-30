@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- bash: az --version
+- bash: az group create --name maumau --location brazilsouth
   displayName: 'Show Azure CLI version'
   env:
     AZURE_DEVOPS_EXT_PAT: $(System.AccessToken)
